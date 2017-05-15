@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!-- <pattern> %date{ISO8601} |-[%thread] %highlight(%-5level) %logger{26} - %msg%n</pattern> -->
+			<!-- <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p}\(${PID:- }\)[%t] %cyan[%logger{30}:%line]) %msg%n</pattern> -->
+			<pattern>%d{ISO8601} %highlight(%-5level) [%.-12t] %cyan(%logger{32}:%line) - %m%n%ex</pattern>
+		</layout>
+	</appender>
+
+	<logger name="example.logback.level.top" level="debug" additivity="false"/>
+
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
